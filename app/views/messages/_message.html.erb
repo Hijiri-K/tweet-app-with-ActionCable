@@ -1,0 +1,24 @@
+
+<%user = User.find_by(id: message.user_id)%>
+<div class="posts-index-item">
+  <%if message.user_id%>
+  <div class="post-user-name">
+    <img src="<%="/user_images/#{user.image_name}"%>" alt="">
+
+    <%=link_to("#{user.name}","/users/#{user.id}/show")%>
+  </div>
+  <%end%>
+    <%=link_to(simple_format(message.content), "/posts/#{message.id}")%>
+
+    <%if Like.find_by(user_id: session[:user_id], post_id: message.id)%>
+      <%=link_to("/likes/#{message.id}/destroy_index", {method:"post"}) do%>
+        <span class = "fa fa-heart like"></span>
+      <%end%>
+    <%else%>
+      <%=link_to("/likes/#{message.id}/create_index", {method:"post"}) do%>
+        <span class = "fa fa-heart unlike"></span>
+      <%end%>
+    <%end%>
+    <%likes_count = Like.where(post_id: message.id).count%>
+    <%=likes_count%>
+</div>
