@@ -107,6 +107,16 @@
   display: none;
 }
 
+.login-modal-wrapper2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
 .modal {
   /*position: absolute;
   top: 20%;
@@ -169,7 +179,7 @@
 
 /*レスポンシブ----------------------------------------------------------------*/
 
-@media(max-width: 670px) {
+/* @media(max-width: 670px) {
   header {
     height: 64px;
   }
@@ -211,17 +221,17 @@
   .h {
     display:block;
   }
-}
+} */
 
 
 
 /*チェックは見えなくする*/
-.hidden_box input {
+/* .hidden_box input {
     display: none;
-}
+} */
 
 /*中身を非表示にしておく*/
-.hidden_box .hidden_show {
+/* .hidden_box .hidden_show {
     height: 0;
     padding: 0;
     overflow: hidden;
@@ -231,10 +241,10 @@
     top:64px;
     right:0px;
     background-color:#7b5544;
-}
+} */
 
 /*クリックで中身表示*/
-.hidden_box input:checked + .hidden_show {
+/* .hidden_box input:checked + .hidden_show {
     height: auto;
     opacity: 1;
-}
+} */

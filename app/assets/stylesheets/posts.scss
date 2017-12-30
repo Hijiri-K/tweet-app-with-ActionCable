@@ -22,9 +22,20 @@
   border: 1px solid #d0d5d8;
   border-radius: 5px;
   background-color: white;
-  width:100%;
+  width:70%;
   vertical-align: middle;
 }
+
+.new-post select{
+  font-size: 12px;
+   padding: 10px 3px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+  background-color: white;
+  width:27%;
+  vertical-align: middle;
+}
+
 
 .new-post input[type = "submit"]{
   display: inline-block;

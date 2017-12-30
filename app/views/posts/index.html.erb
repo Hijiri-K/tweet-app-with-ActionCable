@@ -2,13 +2,18 @@
 <div class="main posts-index">
   <div class="new-post">
     <input name="content" rows="2" cols="65" data-behavior="room_speaker">
+    <select id="group" name="group">
+      <option value="1">Group1</option>
+      <option value="2">Group2</option>
+      <option value="3">Group3</option>
+    </select>
   </div>
 
 
   <div class="container">
     <%@posts.each do |post|%>
     <%user = User.find_by(id: post.user_id)%>
-    <div class="posts-index-item">
+    <div class="posts-index-item" id="<%=post.id%>">
       <%if post.user_id%>
       <div class="post-user-name">
         <img src="<%="/user_images/#{user.image_name}"%>" alt="">
@@ -29,6 +34,12 @@
         <%end%>
         <%likes_count = Like.where(post_id: post.id).count%>
         <%=likes_count%>
+
+        <%n = Time.zone.now
+         c = post.created_at%>
+
+        <%=(n-c).to_i/60%>min ago
+        <a href="#"　class = "delete-post">削除</a>
     </div>
     <%end%>
 

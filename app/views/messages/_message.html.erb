@@ -1,6 +1,6 @@
 
 <%user = User.find_by(id: message.user_id)%>
-<div class="posts-index-item">
+<div class="posts-index-item" id="<%=message.id%>">
   <%if message.user_id%>
   <div class="post-user-name">
     <img src="<%="/user_images/#{user.image_name}"%>" alt="">
@@ -21,4 +21,8 @@
     <%end%>
     <%likes_count = Like.where(post_id: message.id).count%>
     <%=likes_count%>
+
+            <%n = Time.zone.now
+             c = message.created_at%>
+            <%=(n-c).to_i/60%>min ago
 </div>
