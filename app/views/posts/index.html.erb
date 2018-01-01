@@ -39,7 +39,7 @@
          c = post.created_at%>
 
         <%=(n-c).to_i/60%>min ago
-        <a href="#"　class = "delete-post">削除</a>
+        <button id="<%=post.id%>" class="delete-btn">削除</button>
     </div>
     <%end%>
 

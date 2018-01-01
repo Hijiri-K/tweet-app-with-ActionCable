@@ -25,4 +25,6 @@
             <%n = Time.zone.now
              c = message.created_at%>
             <%=(n-c).to_i/60%>min ago
+
+              <button id="<%=message.id%>" class="delete-btn">削除</button>
 </div>
