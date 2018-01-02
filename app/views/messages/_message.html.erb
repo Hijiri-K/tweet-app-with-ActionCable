@@ -22,9 +22,7 @@
     <%likes_count = Like.where(post_id: message.id).count%>
     <%=likes_count%>
 
-            <%n = Time.zone.now
-             c = message.created_at%>
-            <%=(n-c).to_i/60%>min ago
+    <span data-livestamp="<%=message.created_at%>"></span>
 
               <button id="<%=message.id%>" class="delete-btn">削除</button>
 </div>

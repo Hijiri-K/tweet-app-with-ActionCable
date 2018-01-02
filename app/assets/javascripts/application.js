@@ -30,7 +30,4 @@ $(document).ready(function(){
     $('#signup-modal').fadeOut();
   });
 
-
-
-
 });
